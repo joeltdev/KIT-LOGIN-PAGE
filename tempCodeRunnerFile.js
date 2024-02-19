@@ -1,3 +1,1 @@
-app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./server.js"));
-// });
+const stringfy = JSON.s(obj);
