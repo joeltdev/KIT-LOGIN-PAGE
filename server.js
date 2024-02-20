@@ -1,5 +1,3 @@
-// // const express = require("express");
-// // const app = express();
 
 // const { json } = require("express");
 
@@ -30,10 +28,7 @@
 //   }
 // });
 // // Start the server
-// const port = 3003;
-// app.listen(port, () => {
-//   console.log(`Server is running on http://localhost:${port}`);
-// });
+
 // const express = require('express');
 // const app = express();
 // const port = 3000;
