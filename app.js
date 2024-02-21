@@ -42,7 +42,6 @@ app.get("/login", (req, res) => {
 
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
-  // Check if the email and password match the predefined credentials
   if (email === "joelmathew@gmil.com" && password === "1234") {
     req.session.isAuth = true; // Store the user's email in the session
     res.redirect("/home");
