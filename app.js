@@ -2,7 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser"); // Import body-parser
 const nocache = require("nocache");
-
+const EventEmitter = require("events");
 const app = express();
 
 // Set up EJS
@@ -46,7 +46,7 @@ app.post("/login", (req, res) => {
     req.session.isAuth = true; // Store the user's email in the session
     res.redirect("/home");
   } else {
-    res.redirect("/login"); // Redirect to error page if account is not valid
+    res.redirect("/login");
   }
 });
 
