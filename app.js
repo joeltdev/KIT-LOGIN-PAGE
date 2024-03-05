@@ -1,8 +1,7 @@
 const express = require("express");
 const session = require("express-session");
-const bodyParser = require("body-parser"); // Import body-parser
+const bodyParser = require("body-parser");
 const nocache = require("nocache");
-const EventEmitter = require("events");
 const app = express();
 
 // Set up EJS
@@ -43,7 +42,7 @@ app.get("/login", (req, res) => {
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   if (email === "joelmathew@gmil.com" && password === "1234") {
-    req.session.isAuth = true; // Store the user's email in the session
+    req.session.isAuth = true;
     res.redirect("/home");
   } else {
     res.redirect("/login");
@@ -66,6 +65,15 @@ app.post("/logout", (req, res) => {
       res.redirect("/login");
     }
   });
+});
+
+// GET route to add two numbers
+app.get("/suma/:val1/:val2", (req, res) => {
+  const val1 = parseInt(req.params.val1);
+  const val2 = parseInt(req.params.val2);
+  const sum = val1 + val2;
+  console.log("Sum:", sum);
+  res.send(`Sum of ${val1} and ${val2} is ${sum}`);
 });
 
 // Start server
