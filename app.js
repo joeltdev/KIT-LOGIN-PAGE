@@ -18,7 +18,7 @@ app.use(
 );
 
 // Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(nocache());
 
@@ -65,15 +65,6 @@ app.post("/logout", (req, res) => {
       res.redirect("/login");
     }
   });
-});
-
-// GET route to add two numbers
-app.get("/suma/:val1/:val2", (req, res) => {
-  const val1 = parseInt(req.params.val1);
-  const val2 = parseInt(req.params.val2);
-  const sum = val1 + val2;
-  console.log("Sum:", sum);
-  res.send(`Sum of ${val1} and ${val2} is ${sum}`);
 });
 
 // Start server
